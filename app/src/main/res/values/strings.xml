@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Messapps</string>
+    <string name="lblLight">Light</string>
+    <string name="lblDark">Dark</string>
+    <string name="signin">Sign in</string>
+    <string name="signup">Sign up</string>
+    <string name="msgTxt">Get started with your</string>
+    <string name="msgTxtACC">MessApps account</string>
+    <string name="email_id">Email ID</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="reset">Reset Password</string>
+    <string name="new_password">New Password</string>
+    <string name="re_new_password">Reset New Password</string>
+    <string name="save_password">Save Password</string>
+    <string name="save_login_info">Save login info</string>
+    <string name="forgot_pass">Forgot Password</string>
+    <string name="new_user">New User?</string>
+    <string name="continue_lbl">Continue</string>
+    <string name="register_txt">Register</string>
+    <string name="login">Log In</string>
+    <string name="register">Register</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="otp_lbl">Enter the OTP sent to your registered email below.</string>
+</resources>

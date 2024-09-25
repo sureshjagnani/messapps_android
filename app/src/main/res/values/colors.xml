@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="active_btn">#603F84</color>
+
+    //Light
+    <color name="bg">#F4F5EF</color>
+    <color name="switchBg">#E0E0E0</color>
+    <color name="unSelected">#E0E0E0</color>
+    <color name="selected">#F4F5EF</color>
+    <color name="lblText">#000000</color>
+    <color name="bg_input">#E9E9E9</color>
+    <color name="loginBg">#E0E0E0</color>
+    //Dark
+    <color name="bgDark">#FF000000</color>
+    <color name="switchBgDark">#2d2d2d</color>
+    <color name="unSelectedDark">#2d2d2d</color>
+    <color name="selectedDark">#000000</color>
+    <color name="lblTextDark">#FFFFFFFF</color>
+    <color name="bg_input_dark">#FF000000</color>
+    <color name="loginBgDark">#2d2d2d</color>
+</resources>
