@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item android:title="Client Portal">
+        <menu>
+
+                <item
+                    android:id="@+id/home"
+                    android:title="Home" />
+                <item
+                    android:id="@+id/estimates"
+                    android:title="Estimates" />
+                <item
+                    android:id="@+id/progress"
+                    android:title="Progress" />
+                <item
+                    android:id="@+id/viewbuids"
+                    android:title="View Builds" />
+                <item
+                    android:id="@+id/invoices"
+                    android:title="Invoices" />
+
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/affi_port"
+        android:title="Affiliate Portal"/>
+
+    <item android:title="MessApps">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/about"
+                    android:title="About us" />
+                <item
+                    android:id="@+id/blog"
+                    android:title="Blog" />
+                <item
+                    android:id="@+id/press"
+                    android:title="Press" />
+                <item
+                    android:id="@+id/awards"
+                    android:title="Awards" />
+                <item
+                    android:id="@+id/social"
+                    android:title="Social" />
+                <item
+                    android:id="@+id/website"
+                    android:title="Website" />
+                <item
+                    android:id="@+id/reviews"
+                    android:title="Reviews" />
+            </group>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"/>
+    <item
+        android:id="@+id/contact"
+        android:title="Contact"/>
+</menu>

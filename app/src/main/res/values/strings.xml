@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">Messapps</string>
     <string name="lblLight">Light</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="lblDark">Dark</string>
     <string name="signin">Sign in</string>
     <string name="signup">Sign up</string>
+    <string name="signout">Sign out</string>
     <string name="msgTxt">Get started with your</string>
     <string name="msgTxtACC">MessApps account</string>
     <string name="email_id">Email ID</string>
@@ -23,4 +26,43 @@
     <string name="verify_otp">Verify OTP</string>
     <string name="resend_otp">Resend OTP</string>
     <string name="otp_lbl">Enter the OTP sent to your registered email below.</string>
+<string name="templbl">Hello Jone,</string>
+    <!--    profile-->
+    <string name="yourProfile">Your Profile</string>
+    <string name="editPic">Edit Picture</string>
+    <string name="yourName">Your Name</string>
+    <string name="fullName">Full Name</string>
+    <string name="designation">Designation</string>
+    <string name="yourDesig">Your Designation</string>
+    <string name="emailId">Email ID</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="p1">00</string>
+    <string name="p2">000 000 0000</string>
+    <string name="cn">Company Name</string>
+    <string name="industry">Industry</string>
+    <string name="save">Save</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    Estimate-->
+
+    <string name="eTitle">Price Estimates</string>
+    <string name="eTitleOngoing">Ongoing Estimates</string>
+    <string name="detail_">Detail</string>
+    <string name="addnew">Add new project</string>
+    <!--progress-->
+    <string name="pTitle">Progress</string>
+    <string name="contact_">contact</string>
+    <!--invoces-->
+    <string name="iTitle">Invoices</string>
+    <string name="statement">Your statement</string>
+    <string name="iHistory">Invoice History</string>
+    <string name="iAmount">$12,580.50</string>
+    <string name="dueon">Due on July 15, 2024</string>
+    <string name="views_">Views</string>
+    <string name="download_">Download</string>
+    <!--builds-->
+    <string name="bTitle">Builds</string>
+    <string name="uploadBuild">Upload Build</string>
+
 </resources>

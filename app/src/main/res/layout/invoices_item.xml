@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/invoices_item_bg"
+    android:paddingTop="8sp"
+    android:paddingBottom="8sp"
+    android:layout_marginTop="10sp"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/child_name"
+        style="@style/TextStyleBold"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center|start"
+        android:layout_weight="1"
+        android:gravity="center|start"
+
+        android:paddingStart="15sp"
+        android:text="June 2024"
+        android:textSize="18sp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivView"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:padding="8sp"
+        android:layout_gravity="center|end"
+        android:layout_marginEnd="15sp"
+        android:background="@drawable/ic_round_purpul"
+        android:contentDescription="@string/views_"
+        android:gravity="center|end"
+        android:src="@drawable/ic_eye_white" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDownload"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_gravity="center|end"
+        android:padding="8sp"
+        android:layout_marginEnd="20sp"
+        android:background="@drawable/ic_round_purpul"
+        android:contentDescription="@string/download_"
+        android:gravity="bottom|end"
+        android:src="@drawable/ic_download" />
+</androidx.appcompat.widget.LinearLayoutCompat>

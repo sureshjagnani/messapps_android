@@ -6,8 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/bg"
-    android:fitsSystemWindows="true"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -22,8 +20,8 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70sp"
+            android:layout_height="70sp"
             android:layout_gravity="center|top"
             android:contentDescription="@string/app_name"
             android:gravity="center|top"
@@ -104,6 +102,7 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llSaveInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|start"
@@ -112,6 +111,7 @@
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvbgSI"
                     android:layout_width="17sp"
                     android:layout_height="17sp"
                     android:background="@drawable/bg_save_login" />
@@ -128,7 +128,7 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/llLogin"
+                android:id="@+id/llContinue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

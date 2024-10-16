@@ -2,21 +2,45 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Messapps" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryVariant">@color/black</item>
-        <item name="colorAccent">@color/black</item>
+        <item name="colorPrimary">@color/bgDark</item>
+        <item name="colorPrimaryVariant">@color/bgDark</item>
+        <item name="colorPrimaryDark">@color/bgDark</item>
+        <item name="colorAccent">@color/bgDark</item>
+        <item name="android:windowBackground">@color/darkBack</item>
+        <!--&lt;!&ndash; Secondary brand color. &ndash;&gt;
+        <item name="colorSecondary">@color/bgDark</item>
+        <item name="colorSecondaryVariant">@color/bgDark</item>
+        <item name="colorOnSecondary">@color/bgDark</item>-->
+
         <item name="android:screenOrientation">portrait</item>
         <item name="windowActionBar">false</item>
-        <item name="android:statusBarColor">@color/black</item>
+        <!--<item name="android:statusBarColor">@color/bgDark</item>-->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:textColorSecondary">@color/white</item>
+        <!--        <item name="android:textColorPrimary">@color/white</item>-->
+        <!--        <item name="android:textColorSecondary">@color/white</item>-->
     </style>
 
     <style name="TextStyleBold" parent="Base.Theme.Messapps">
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:color">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextStyleBoldDrawer" parent="Base.Theme.Messapps">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:color">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextStyleItem" parent="Base.Theme.Messapps">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:color">@color/white</item>
+    </style>
+
+    <style name="TextStyleBar" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:color">@color/active_btn</item>
         <item name="android:textStyle">bold</item>
     </style>
 

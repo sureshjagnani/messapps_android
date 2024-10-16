@@ -6,8 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/bg"
-    android:fitsSystemWindows="true"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -22,8 +20,8 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70sp"
+            android:layout_height="70sp"
             android:layout_gravity="center|top"
             android:contentDescription="@string/app_name"
             android:gravity="center|top"
@@ -66,6 +64,7 @@
                     android:layout_width="67sp"
                     android:layout_height="81sp"
                     android:background="@drawable/bg_otp"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.AppCompatEditText
@@ -86,6 +85,7 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="67sp"
                     android:layout_height="81sp"
+                    android:layout_weight="1"
                     android:layout_marginStart="12sp"
                     android:layout_marginEnd="12sp"
                     android:background="@drawable/bg_otp"
@@ -110,6 +110,7 @@
                     android:layout_width="67sp"
                     android:layout_height="81sp"
                     android:layout_marginEnd="12sp"
+                    android:layout_weight="1"
                     android:background="@drawable/bg_otp"
                     android:orientation="vertical">
 
@@ -132,6 +133,7 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="67sp"
                     android:layout_height="81sp"
+                    android:layout_weight="1"
                     android:background="@drawable/bg_otp"
                     android:orientation="vertical">
 
@@ -172,7 +174,7 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/llLogin"
+                android:id="@+id/llContinue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

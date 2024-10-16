@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llDetail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/estimates_bg_item"
+    android:minHeight="80sp"
+    android:layout_marginTop="8sp"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/child_name"
+            style="@style/TextStyleItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_weight="1"
+            android:gravity="center|start"
+            android:text="Group Text"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:layout_marginStart="10sp"
+            android:contentDescription="@string/detail_"
+            android:gravity="center|end"
+            android:src="@drawable/ic_detail" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/estimates_bg_bottom_item"
+        android:orientation="horizontal"
+        android:paddingStart="15sp"
+        android:paddingTop="6sp"
+        android:paddingEnd="15sp"
+        android:paddingBottom="6sp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHour"
+            style="@style/TextStyleItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center|start"
+            android:maxLines="2"
+            android:text="Estimated Hour:120"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPrice"
+            style="@style/TextStyleItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center|end"
+            android:maxLines="2"
+            android:text="Estimated Price:$12,000"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

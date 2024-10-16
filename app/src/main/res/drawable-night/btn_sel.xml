@@ -12,5 +12,5 @@
         android:bottomRightRadius="10dp"
         android:topLeftRadius="10dp"
         android:topRightRadius="10dp" />
-    <solid android:color="@color/selectedDark" />
+    <solid android:color="@color/unSelectedDark" />
 </shape>

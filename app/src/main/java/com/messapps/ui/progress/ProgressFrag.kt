@@ -1,0 +1,93 @@
+package com.messapps.ui.progress
+
+import android.content.Context
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.messapps.adapter.progress.ProgressAdapter
+import com.messapps.databinding.ProgressMainBinding
+import com.messapps.model.progress.ProgressData
+import com.messapps.utils.ARG_PARAM1
+import com.messapps.utils.ARG_PARAM2
+import com.messapps.utils.getProgress
+
+
+class ProgressFrag : Fragment(), ProgressAdapter.CallbackDetail {
+    private var _binding: ProgressMainBinding? = null
+    private var view: View? = null
+    private var progressAdapter: ProgressAdapter? = null
+    var pListTitle: MutableList<ProgressData>? = null
+
+    // TODO: Rename and change types of parameters
+    private var param1: String? = null
+    private var param2: String? = null
+
+    private val binding get() = _binding!!
+    lateinit var mContext: Context
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)
+        }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = ProgressMainBinding.inflate(inflater, container, false)
+        mContext = requireContext()
+        view = binding.root
+
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        pListTitle = getProgress()
+        setAdapter()
+    }
+
+    private fun setAdapter() {
+        binding.rvProgress.setHasFixedSize(true)
+        val layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        binding.rvProgress.layoutManager = layoutManager
+        progressAdapter = ProgressAdapter(pListTitle!!, this)
+        binding.rvProgress.setAdapter(progressAdapter!!)
+    }
+
+
+    //    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_navigation, container, false)
+//    }
+    companion object {
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            ProgressFrag().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
+                }
+            }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    override fun viewDetailItem(pos: ProgressData) {
+
+    }
+}

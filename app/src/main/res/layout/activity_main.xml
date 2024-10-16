@@ -1,19 +1,340 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:openDrawer="start">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    <androidx.drawerlayout.widget.DrawerLayout-->
+    <!--        android:id="@+id/drawer"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        tools:openDrawer="start">-->
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30sp"
+
+            android:layout_marginEnd="30sp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:minWidth="40sp"
+                android:minHeight="40sp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:contentDescription="@string/app_name"
+                    android:gravity="center|start"
+                    android:src="@drawable/ic_logo_top" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:gravity="center|end"
+                android:minWidth="40sp"
+                android:minHeight="40sp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
+                    android:gravity="center"
+                    android:src="@drawable/ic_menu" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserName"
+            style="@style/TextStyleBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="30sp"
+            android:layout_marginTop="15sp"
+            android:layout_marginEnd="30sp"
+            android:gravity="center|start"
+            android:text="@string/app_name"
+            android:textSize="28sp"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:id="@+id/flContainerFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30sp"
+            android:layout_marginEnd="30sp"
+            android:layout_weight="1">
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llBar"
+            android:layout_width="match_parent"
+            android:layout_height="65sp"
+            android:layout_marginStart="30sp"
+            android:layout_marginEnd="30sp"
+            android:background="@drawable/bg_bar_bottom"
+            android:orientation="horizontal"
+            android:paddingStart="10sp"
+            android:paddingEnd="10sp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:minHeight="45sp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="Home"
+                    android:gravity="center"
+                    android:src="@drawable/ic_bar_home" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHome"
+                    style="@style/TextStyleBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Home"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llEstimate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:minHeight="45sp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivEstimates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="Estimates"
+                    android:gravity="center"
+                    android:src="@drawable/ic_bar_estimate" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEstimates"
+                    style="@style/TextStyleBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Estimates"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:minHeight="45sp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="Progress"
+                    android:gravity="center"
+                    android:src="@drawable/ic_bar_progress" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvProgress"
+                    style="@style/TextStyleBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Progress"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llBuild"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBuilds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="Build"
+                    android:gravity="center"
+                    android:minHeight="45sp"
+                    android:src="@drawable/ic_bar_build" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBuilds"
+                    style="@style/TextStyleBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Builds"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llInvoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/bg_bar_selected"
+                android:gravity="center"
+                android:minHeight="45sp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivInvoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="Invoice"
+                    android:gravity="center"
+                    android:src="@drawable/ic_bar_invoice" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvInvoices"
+                    style="@style/TextStyleBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Invoices"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/flContainerNavigationMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/bg_views"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="15sp"
+            android:gravity="bottom|end"
+            android:minWidth="40sp"
+            android:minHeight="40sp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:contentDescription="Close"
+                android:gravity="center|bottom"
+                android:src="@drawable/ic_close" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:fitsSystemWindows="true" />
+
+        <include
+            android:id="@+id/custom_layout"
+            layout="@layout/swich_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSignout"
+            style="@style/TextStyleBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="-15sp"
+            android:layout_marginBottom="10sp"
+            android:gravity="center"
+            android:text="@string/signout"
+            android:textSize="18sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.drawerlayout.widget.DrawerLayout>

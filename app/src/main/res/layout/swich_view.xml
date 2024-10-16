@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="40sp"
+        android:layout_marginBottom="25sp"
         android:background="@drawable/bg_btn"
         android:gravity="center"
         android:orientation="horizontal">
@@ -46,6 +46,7 @@
             android:layout_gravity="center"
             android:background="@drawable/btn_unsel"
             android:gravity="center"
+            android:layout_margin="2sp"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatTextView
