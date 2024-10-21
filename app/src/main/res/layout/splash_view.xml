@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:fitsSystemWindows="true"
     android:gravity="center"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -18,73 +19,80 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgIcon"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="45sp"
-            android:layout_marginEnd="45sp"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_margin="45sp"
             android:contentDescription="@string/app_name"
-            android:gravity="center"
             android:src="@drawable/ic_splash" />
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgSplash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:fitsSystemWindows="true"
+            android:scaleType="matrix" />
+    </FrameLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="40sp"
+        android:background="@drawable/bg_btn"
+        android:gravity="center|bottom"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llLight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="40sp"
-            android:background="@drawable/bg_btn"
+            android:layout_margin="2sp"
+            android:background="@drawable/btn_sel"
             android:gravity="center"
             android:orientation="horizontal">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/llLight"
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextStyleBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="2sp"
-                android:background="@drawable/btn_sel"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/TextStyleBold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="35sp"
-                    android:paddingTop="7sp"
-                    android:paddingEnd="35sp"
-                    android:paddingBottom="7sp"
-                    android:text="@string/lblLight"
-                    android:textSize="16sp" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/llDark"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="2sp"
-                android:background="@drawable/btn_unsel"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/TextStyleBold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="35sp"
-                    android:paddingTop="7sp"
-                    android:paddingEnd="35sp"
-                    android:paddingBottom="7sp"
-                    android:text="@string/lblDark"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                android:paddingStart="35sp"
+                android:paddingTop="7sp"
+                android:paddingEnd="35sp"
+                android:paddingBottom="7sp"
+                android:text="@string/lblLight"
+                android:textSize="16sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
-        <!--<include
-            android:id="@+id/custom_layout"
-            layout="@layout/swich_view" />-->
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2sp"
+            android:background="@drawable/btn_unsel"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="35sp"
+                android:paddingTop="7sp"
+                android:paddingEnd="35sp"
+                android:paddingBottom="7sp"
+                android:text="@string/lblDark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
-</androidx.appcompat.widget.LinearLayoutCompat>
+    <!--<include
+        android:id="@+id/custom_layout"
+        layout="@layout/swich_view" />-->
+
+
+</FrameLayout>

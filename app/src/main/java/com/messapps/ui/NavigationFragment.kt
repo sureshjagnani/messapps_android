@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.messapps.adapter.ChildAdapter
 import com.messapps.adapter.NaviAdapter
 import com.messapps.databinding.FragmentNavigationBinding
-import com.messapps.model.NavigationData
+import com.messapps.data.model.NavigationData
 import com.messapps.utils.getData
 import com.messapps.utils.getTitle
 

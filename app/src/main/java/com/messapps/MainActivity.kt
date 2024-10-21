@@ -1,9 +1,12 @@
 package com.messapps
 
 
+import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.Window
+
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -17,7 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.messapps.adapter.ChildAdapter
 import com.messapps.adapter.NaviAdapter
 import com.messapps.databinding.ActivityMainBinding
-import com.messapps.model.NavigationData
+import com.messapps.data.model.NavigationData
 import com.messapps.ui.builds.BuildsFrag
 import com.messapps.ui.estimates.EstimatesFrag
 import com.messapps.ui.home.HomeFrag
@@ -177,45 +180,53 @@ class MainActivity : AppCompatActivity(), NaviAdapter.ClickCallback, ChildAdapte
             callFragFromNavigation(order)
         }
     }
-private fun callFragFromNavigation(order: NavigationData)
-{
-    when (order.insertBy) {
-        mHome -> {
-            replaceFragment(HomeFrag())
-            barSelection(mHome)
-        }
-        mEstimates -> {
-            replaceFragment(EstimatesFrag())
-            barSelection(mEstimates)
-        }
-        mProgress -> {
-            replaceFragment(ProgressFrag())
-            barSelection(mProgress)
-        }
-        mBuilds -> {
-            replaceFragment(BuildsFrag())
-            barSelection(mBuilds)
-        }
-        mInvoice -> {
-            replaceFragment(InvoicesFrag())
-            barSelection(mInvoice)
-        }
-        else -> {
-            replaceFragment(HomeFrag())
-            barSelection(mHome)
+
+    private fun callFragFromNavigation(order: NavigationData) {
+        when (order.insertBy) {
+            mHome -> {
+                replaceFragment(HomeFrag())
+                barSelection(mHome)
+            }
+
+            mEstimates -> {
+                replaceFragment(EstimatesFrag())
+                barSelection(mEstimates)
+            }
+
+            mProgress -> {
+                replaceFragment(ProgressFrag())
+                barSelection(mProgress)
+            }
+
+            mBuilds -> {
+                replaceFragment(BuildsFrag())
+                barSelection(mBuilds)
+            }
+
+            mInvoice -> {
+                replaceFragment(InvoicesFrag())
+                barSelection(mInvoice)
+            }
+
+            else -> {
+                replaceFragment(HomeFrag())
+                barSelection(mHome)
+            }
         }
     }
-}
+
     private fun barLayoutVisibility(mShow: Int) {
         when (mShow) {
             0 -> {
                 mBarVisible = true
                 binding.llBar.visibility = View.VISIBLE
             }
+
             1 -> {
                 mBarVisible = false
                 binding.llBar.visibility = View.GONE
             }
+
             else -> {
                 mBarVisible = true
                 binding.llBar.visibility = View.VISIBLE
@@ -239,9 +250,14 @@ private fun callFragFromNavigation(order: NavigationData)
 
     private fun barSelection(mShow: Int) {
         Last_Selection = mShow
-        if (mShow == mHome)
-        {
-            changeTextVisibility(binding.tvHome,binding.tvEstimates,binding.tvProgress,binding.tvBuilds,binding.tvInvoices)
+        if (mShow == mHome) {
+            changeTextVisibility(
+                binding.tvHome,
+                binding.tvEstimates,
+                binding.tvProgress,
+                binding.tvBuilds,
+                binding.tvInvoices
+            )
             changeBg(
                 binding.llHome,
                 binding.llEstimate,
@@ -259,7 +275,13 @@ private fun callFragFromNavigation(order: NavigationData)
 
         }
         if (mShow == mEstimates) {
-            changeTextVisibility(binding.tvEstimates,binding.tvHome,binding.tvProgress,binding.tvBuilds,binding.tvInvoices)
+            changeTextVisibility(
+                binding.tvEstimates,
+                binding.tvHome,
+                binding.tvProgress,
+                binding.tvBuilds,
+                binding.tvInvoices
+            )
             changeBg(
                 binding.llEstimate,
                 binding.llHome,
@@ -276,7 +298,13 @@ private fun callFragFromNavigation(order: NavigationData)
             )
         }
         if (mShow == mProgress) {
-            changeTextVisibility(binding.tvProgress,binding.tvHome,binding.tvEstimates,binding.tvBuilds,binding.tvInvoices)
+            changeTextVisibility(
+                binding.tvProgress,
+                binding.tvHome,
+                binding.tvEstimates,
+                binding.tvBuilds,
+                binding.tvInvoices
+            )
             changeBg(
                 binding.llProgress,
                 binding.llHome,
@@ -293,7 +321,13 @@ private fun callFragFromNavigation(order: NavigationData)
             )
         }
         if (mShow == mBuilds) {
-            changeTextVisibility(binding.tvBuilds,binding.tvHome,binding.tvEstimates,binding.tvProgress,binding.tvInvoices)
+            changeTextVisibility(
+                binding.tvBuilds,
+                binding.tvHome,
+                binding.tvEstimates,
+                binding.tvProgress,
+                binding.tvInvoices
+            )
             changeBg(
                 binding.llBuild,
                 binding.llHome,
@@ -310,7 +344,13 @@ private fun callFragFromNavigation(order: NavigationData)
             )
         }
         if (mShow == mInvoice) {
-            changeTextVisibility(binding.tvInvoices,binding.tvHome,binding.tvEstimates,binding.tvProgress,binding.tvBuilds)
+            changeTextVisibility(
+                binding.tvInvoices,
+                binding.tvHome,
+                binding.tvEstimates,
+                binding.tvProgress,
+                binding.tvBuilds
+            )
             changeBg(
                 binding.llInvoice,
                 binding.llBuild,
@@ -338,10 +378,14 @@ private fun callFragFromNavigation(order: NavigationData)
     ) {
         l1.background =
             AppCompatResources.getDrawable(this@MainActivity, R.drawable.bg_bar_selected)
-        l2.background = AppCompatResources.getDrawable(this@MainActivity, R.drawable.bg_bar_bottom_visible)
-        l3.background = AppCompatResources.getDrawable(this@MainActivity, R.drawable.bg_bar_bottom_visible)
-        l4.background = AppCompatResources.getDrawable(this@MainActivity, R.drawable.bg_bar_bottom_visible)
-        l5.background = AppCompatResources.getDrawable(this@MainActivity, R.drawable.bg_bar_bottom_visible)
+        l2.background =
+            AppCompatResources.getDrawable(this@MainActivity, R.drawable.bg_bar_bottom_visible)
+        l3.background =
+            AppCompatResources.getDrawable(this@MainActivity, R.drawable.bg_bar_bottom_visible)
+        l4.background =
+            AppCompatResources.getDrawable(this@MainActivity, R.drawable.bg_bar_bottom_visible)
+        l5.background =
+            AppCompatResources.getDrawable(this@MainActivity, R.drawable.bg_bar_bottom_visible)
     }
 
     private fun changeImageSelected(id1: Int, id2: Int, id3: Int, id4: Int, id5: Int) {
@@ -351,6 +395,7 @@ private fun callFragFromNavigation(order: NavigationData)
         binding.ivBuilds.setImageResource(id4)
         binding.ivInvoice.setImageResource(id5)
     }
+
     private fun changeTextVisibility(
         t1: AppCompatTextView,
         t2: AppCompatTextView,
@@ -358,27 +403,28 @@ private fun callFragFromNavigation(order: NavigationData)
         t4: AppCompatTextView,
         t5: AppCompatTextView
     ) {
-        t1.visibility= View.VISIBLE
+        t1.visibility = View.VISIBLE
         changeTextColor(t1)
-        t2.visibility= View.GONE
-        t3.visibility= View.GONE
-        t4.visibility= View.GONE
-        t5.visibility= View.GONE
+        t2.visibility = View.GONE
+        t3.visibility = View.GONE
+        t4.visibility = View.GONE
+        t5.visibility = View.GONE
     }
+
     public fun updateChildFragment() {
         //Log.e("UpdateFrag", "Calling from Frag")
     }
-    private fun changeTextColor(t1: AppCompatTextView)
-    {
+
+    private fun changeTextColor(t1: AppCompatTextView) {
         val themePosition = when (userPrefs.appTheme) {
             Theme.LIGHT_MODE -> 0
             Theme.DARK_MODE -> 1
             else -> 0
         }
-        if(themePosition == 0)
-        t1.setTextColor(ContextCompat.getColor(this@MainActivity,R.color.white))
+        if (themePosition == 0)
+            t1.setTextColor(ContextCompat.getColor(this@MainActivity, R.color.white))
         else
-            t1.setTextColor(ContextCompat.getColor(this@MainActivity,R.color.active_btn))
+            t1.setTextColor(ContextCompat.getColor(this@MainActivity, R.color.active_btn))
     }
-    
+
 }

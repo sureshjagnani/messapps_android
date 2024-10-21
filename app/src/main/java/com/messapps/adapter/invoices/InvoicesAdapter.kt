@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.messapps.databinding.EstimatesItemBinding
 import com.messapps.databinding.InvoicesItemBinding
-import com.messapps.model.invoices.InvoicesData
-import com.messapps.model.progress.ProgressData
+import com.messapps.data.model.invoices.InvoicesData
+import com.messapps.data.model.progress.ProgressData
 
 
 class InvoicesAdapter

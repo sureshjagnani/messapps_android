@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.messapps.databinding.BuildItemBinding
-import com.messapps.model.invoices.InvoicesData
+import com.messapps.data.model.invoices.InvoicesData
 
 
 

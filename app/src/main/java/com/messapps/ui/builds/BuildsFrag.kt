@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.messapps.adapter.builds.BuildsAdapter
 import com.messapps.databinding.BuildMainBinding
 
-import com.messapps.model.invoices.InvoicesData
+import com.messapps.data.model.invoices.InvoicesData
 import com.messapps.utils.ARG_PARAM1
 import com.messapps.utils.ARG_PARAM2
 import com.messapps.utils.getInvoices

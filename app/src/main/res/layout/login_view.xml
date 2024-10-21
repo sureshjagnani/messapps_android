@@ -8,7 +8,11 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:orientation="vertical">
-
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    >
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -179,10 +183,11 @@
                     android:textSize="18sp" />
 
                 <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivEye"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center|end"
-                    android:layout_marginEnd="20dp"
+                    android:paddingEnd="20dp"
                     android:src="@drawable/ic_eye" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -258,6 +263,7 @@
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLbl"
                         style="@style/TextStyleBold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -280,6 +286,7 @@
                     android:visibility="gone">
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvRegiLbl"
                         style="@style/TextStyleBold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -332,6 +339,7 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>
     <include
         android:id="@+id/custom_layout"
         layout="@layout/swich_view" />

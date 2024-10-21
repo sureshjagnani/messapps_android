@@ -28,6 +28,7 @@
             android:src="@drawable/ic_login" />
 
         <androidx.appcompat.widget.AppCompatTextView
+
             style="@style/TextStyleBold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,6 +51,7 @@
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -64,10 +66,11 @@
                     android:textSize="18sp" />
 
                 <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivEye"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center|end"
-                    android:layout_marginEnd="20dp"
+                    android:paddingEnd="20dp"
                     android:src="@drawable/ic_eye" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -80,6 +83,7 @@
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etRePassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -94,10 +98,11 @@
                     android:textSize="18sp" />
 
                 <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivEyeRe"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center|end"
-                    android:layout_marginEnd="20dp"
+                    android:paddingEnd="20dp"
                     android:src="@drawable/ic_eye" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -139,6 +144,7 @@
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLbl"
                     style="@style/TextStyleBold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -2,6 +2,7 @@ package com.messapps
 
 import android.app.Application
 import com.messapps.utils.GLOBAL_TAG
+import com.messapps.utils.PreferencesUtils
 import com.messapps.utils.ThemeChanger
 import com.messapps.utils.UserPreferencesRepository
 
@@ -9,7 +10,7 @@ import com.messapps.utils.UserPreferencesRepository
 class MyApp : Application() {
 
     lateinit var userPreferences: UserPreferencesRepository
-
+    lateinit var preferencesUtils: PreferencesUtils
     companion object {
         private val TAG: String =
             GLOBAL_TAG + " " + MyApp::class.java.simpleName
@@ -23,7 +24,7 @@ class MyApp : Application() {
 
         instance = this
         userPreferences = UserPreferencesRepository.getInstance(this)
-
+        preferencesUtils = PreferencesUtils.getInstance(this)
 
         // if (BuildConfig.DEBUG) {
         //     Timber.plant(Timber.DebugTree())

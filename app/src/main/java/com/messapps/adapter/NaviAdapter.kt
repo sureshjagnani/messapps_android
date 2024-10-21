@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.messapps.adapter.ChildAdapter.CallbackChild
 import com.messapps.R
-import com.messapps.model.NavigationData
+import com.messapps.data.model.NavigationData
 
 
 class NaviAdapter
@@ -95,7 +95,7 @@ class NaviAdapter
     }
 
     interface ClickCallback {
-        fun callNaviFragment(pos: Int?,order:NavigationData)
+        fun callNaviFragment(pos: Int?,order: NavigationData)
     }
 
     override fun getItemCount(): Int {

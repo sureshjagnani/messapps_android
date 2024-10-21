@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.messapps.adapter.progress.ProgressAdapter
 import com.messapps.databinding.ProgressMainBinding
-import com.messapps.model.progress.ProgressData
+import com.messapps.data.model.progress.ProgressData
 import com.messapps.utils.ARG_PARAM1
 import com.messapps.utils.ARG_PARAM2
 import com.messapps.utils.getProgress

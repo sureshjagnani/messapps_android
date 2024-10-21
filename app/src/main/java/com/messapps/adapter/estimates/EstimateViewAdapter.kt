@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.messapps.databinding.EstimatesItemBinding
-import com.messapps.model.estimates.EstimateData
+import com.messapps.data.model.estimates.EstimateData
 
 
 class EstimateViewAdapter

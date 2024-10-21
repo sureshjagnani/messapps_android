@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.messapps.MainActivity
 import com.messapps.adapter.estimates.EstimateViewAdapter
 import com.messapps.databinding.EstimatesMainBinding
-import com.messapps.model.NavigationData
-import com.messapps.model.estimates.EstimateData
+import com.messapps.data.model.NavigationData
+import com.messapps.data.model.estimates.EstimateData
 import com.messapps.utils.getEstimate
 
 private const val ARG_PARAM1 = "param1"

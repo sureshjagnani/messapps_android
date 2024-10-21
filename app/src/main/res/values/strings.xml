@@ -14,7 +14,7 @@
     <string name="password">Password</string>
     <string name="reset">Reset Password</string>
     <string name="new_password">New Password</string>
-    <string name="re_new_password">Reset New Password</string>
+    <string name="re_new_password">Renter New Password</string>
     <string name="save_password">Save Password</string>
     <string name="save_login_info">Save login info</string>
     <string name="forgot_pass">Forgot Password</string>

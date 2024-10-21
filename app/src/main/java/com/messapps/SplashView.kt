@@ -3,8 +3,18 @@ package com.messapps
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
+import android.view.View
+import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.LinearLayoutCompat
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.load.resource.gif.GifDrawable
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.Target
 import com.messapps.authentication.login.LoginView
 import com.messapps.databinding.SplashViewBinding
 import com.messapps.utils.UserPreferencesRepository
@@ -17,15 +27,15 @@ class SplashView : AppCompatActivity() {
     private lateinit var llLight: LinearLayoutCompat
     private lateinit var llDark: LinearLayoutCompat
     private lateinit var binding: SplashViewBinding
-    private val splashTimeOut  = 3000
+    private val splashTimeOut = 7500
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = SplashViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.llLight.setOnClickListener{
+        binding.llLight.setOnClickListener {
             setAppTheme(0)
         }
-        binding.llDark.setOnClickListener{
+        binding.llDark.setOnClickListener {
             setAppTheme(1)
         }
         Handler().postDelayed({
@@ -34,6 +44,41 @@ class SplashView : AppCompatActivity() {
             finish()
         }, splashTimeOut.toLong())
         initTheme()
+
+        binding.imgSplash.loadGif(R.drawable.splash)
+
+    }
+
+    private fun AppCompatImageView.loadGif(@DrawableRes resGif: Int) {
+//        Glide.with(this)
+//            .asGif()
+//            .load(resGif)
+//            .into(this)
+
+        Glide.with(this).asGif().load(resGif).addListener(object : RequestListener<GifDrawable> {
+            override fun onLoadFailed(
+                e: GlideException?,
+                model: Any?,
+                target: Target<GifDrawable>,
+                isFirstResource: Boolean
+            ): Boolean {
+                return false
+            }
+
+            override fun onResourceReady(
+                resource: GifDrawable,
+                model: Any,
+                target: Target<GifDrawable>?,
+                dataSource: DataSource,
+                isFirstResource: Boolean
+            ): Boolean {
+                binding.imgIcon.visibility = View.GONE
+                this@loadGif.setImageDrawable(resource)
+                resource.start()
+                return true
+            }
+        }).into(this)
+
     }
 
     private fun initTheme() {

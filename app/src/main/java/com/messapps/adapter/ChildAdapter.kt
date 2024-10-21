@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.messapps.R
-import com.messapps.model.NavigationData
+import com.messapps.data.model.NavigationData
 
 
 class ChildAdapter
